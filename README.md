@@ -18,6 +18,9 @@ HamsterCMS is the world's smallest and very simple content management system.
 
 What is all this for?
 
+The script is intended for people who are not knowledgeable in programming 
+and who want to quickly create a home page on the Internet
+
 this script is an example of how websites should be made, as I see it, 
 how it should be. all these thick frameworks, a bunch of 
 additional languages, various hundred-megabyte hipster crafts 

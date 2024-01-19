@@ -13,7 +13,9 @@ HamsterCMS is the world's smallest and very simple content management system.
     http://old.net.eu.org/ - follow the news, and download new templates
     http://old.net.eu.org/index.php?p=faq.txt - detailed instructions
 
-    What is all this for?
+
+What is all this for?
+
 this script is an example of how websites should be made, as I see it, 
 how it should be. all these thick frameworks, a bunch of 
 additional languages, various hundred-megabyte hipster crafts 

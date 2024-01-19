@@ -1,4 +1,5 @@
 HamsterCMS is the world's smallest and very simple content management system.
+http://old.net.eu.org/win95/ - this is what cms looks like
 
     No database required!
     You only need one file to work!

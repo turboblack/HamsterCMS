@@ -1,7 +1,7 @@
 HamsterCMS is the world's smallest and very simple flatfile content management system.
 
 http://old.net.eu.org/win95/ - this is what cms looks like
-
+https://old.net.eu.org/win95/admin.php - admin panel
     No database required!
     You only need one file to work!
     Works on PHP versions 5.6 and higher (7 and higher recommended)

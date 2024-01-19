@@ -20,7 +20,8 @@ additional languages, various hundred-megabyte hipster crafts
 just to deploy an editable home page? - this is not about this script.
 This script is also useful for training, the simple code allows for this.
 The script is suitable for adherents of old technologies, for ascetic users, 
-downgraders, lovers of retro computers and computer equipment.
+downgraders, lovers of retro computers and computer equipment,
+who want to create a quick, simple, and beautiful home page, or multi-page.
 
 tests showed that the site on this template launched on a 386 computer 
 with 16 MHz and 8 RAM under Windows 95 (it will also launch under 3.11 
@@ -53,9 +54,15 @@ Don’t forget to also change your login and password by
 editing the admin.php file, the name of which can also be changed, 
 this will not affect performance.
 
+articles that we create in the admin panel and save below in the bottom menu by writing ./article.txt and click save.
+This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
+index.php?p=article.txt
+
 how to make more pages? Create a new page in the admin panel. 
 write the content and save. open a page (for example, let's call it blog.txt) 
 and write on it a link to the page you created, save it. this is all.
 
+I deliberately did not write copyrights in the template, because you are erasing them)))
+in addition, with copyrights the template will not look authentic
 Enjoy your use.
 thank you for your attention

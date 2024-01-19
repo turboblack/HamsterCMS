@@ -1,4 +1,4 @@
-HamsterCMS is the world's smallest and very simple content management system.
+HamsterCMS is the world's smallest and very simple flatfile content management system.
 
 http://old.net.eu.org/win95/ - this is what cms looks like
 

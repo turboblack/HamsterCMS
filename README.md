@@ -58,11 +58,10 @@ articles that we create in the admin panel and save below in the bottom menu by 
 This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
 index.php?p=article.txt
 
-how to make more pages? Create a new page in the admin panel. 
-write the content and save. open a page (for example, let's call it blog.txt) 
-and write on it a link to the page you created, save it. this is all.
-
 I deliberately did not write copyrights in the template, because you are erasing them)))
+
 in addition, with copyrights the template will not look authentic
+
 Enjoy your use.
+
 thank you for your attention

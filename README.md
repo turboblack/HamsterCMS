@@ -2,7 +2,7 @@ HamsterCMS is the world's smallest and very simple flatfile content management s
 
 http://old.net.eu.org/win95/ - this is what cms looks like
 
-https://old.net.eu.org/win95/admin.php - admin panel
+https://old.net.eu.org/win95/admin.php - admin panel (login password)
 
 This assembly works on PHP 5 or 7 versions
 

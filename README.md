@@ -72,7 +72,7 @@ articles that we create in the admin panel and save below in the bottom menu by 
 This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
 index.php?p=article.txt
 
-I deliberately did not write copyrights in the template, because you are erasing them)))
+I deliberately did not write copyrights in the template, because you are erasing them))))
 
 in addition, with copyrights the template will not look authentic
 

@@ -4,7 +4,7 @@ http://old.net.eu.org/win95/ - this is what cms looks like
 
 https://old.net.eu.org/win95/admin.php - admin panel (login password)
 
-This assembly works on PHP 5 or 7 versions
+This assembly works on PHP 5,3 to 7,4 versions
 
     No database required!
     You only need one file to work!

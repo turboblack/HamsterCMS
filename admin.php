@@ -175,6 +175,9 @@ echo "<textarea name='Message' cols='150' rows='40'>" . htmlspecialchars($text) 
   <body>
   <html>";
 ?>
+  <form method="post" action="logout.php">
+    <input type="submit" value="Quit">
+  </form>
 <center>
   <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
   <script type="text/javascript">bkLib.onDomLoaded(function () { nicEditors.allTextAreas({ buttonList: ["bold", "italic", "underline", "left", "center", "right", "justify", "ol", "ul", "fontFormat", 'fontSize', 'fontFamily', "indent", "outdent", "image", "link", "unlink", "xhtml", "table", 'upload', 'forecolor', 'bgcolor'] }) });</script>

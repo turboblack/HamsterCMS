@@ -44,7 +44,8 @@ tests showed that the site on this template launched on a 386 computer
 with 16 MHz and 8 RAM under Windows 95 (it will also launch under 3.11 
 if Internet Explorer 5 is installed), and specifically on this engine 
 it is easily opened by browsers under DOS, and the content is edited 
-through the admin panel.
+through the admin panel. On the hamster website there are many templates 
+for downloading that will work correctly in the **Links browser under DOS**
 
 you can also create an HTML5 template and work with it, it’s not difficult, 
 about 10 mouse movements, and your site is ready (if you have 

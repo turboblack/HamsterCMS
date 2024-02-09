@@ -1,6 +1,10 @@
 HamsterCMS is the world's smallest and very simple flatfile content management system.
 
+appearance of the main page of the site
 ![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
+
+appearance of the admin panel
+![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/adminpanel.png)
 
 https://old.net.eu.org/win95/admin.php - admin panel (login password)
 
@@ -16,10 +20,8 @@ This assembly works on PHP 5,6 to 7,4 versions
     Open source and free!
     Easy to adapt templates. Hamster code takes less than a kilobyte! shock!
     
-    http://old.net.eu.org/ - follow the news, and download new templates
-    http://old.net.eu.org/index.php?p=faq.txt - detailed instructions
-
-
+    http://old.net.eu.org/ - follow the news, detailed instructions, and download new templates
+   
 
 
 What is all this for?

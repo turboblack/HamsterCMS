@@ -15,7 +15,7 @@
    
  [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)
 
-### appearance of the main page of the site
+### appearance of the main page
 ![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
 
 ### appearance of the admin panel
@@ -73,12 +73,13 @@ this will not affect performance.
 
 articles that we create in the admin panel and save below in the bottom menu by writing ./article.txt and click save.
 This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
-yourwebpagename/article.txt
+yourwebpagename/article
 
 The admin panel (**login password** by default) can be renamed, this does not affect the functionality.
 an admin panel is not necessarily needed on hosting; you can use any text editor, or if you don’t plan to edit pages anymore, remove this file from the folder.
 
-                                                                ***   P.S.   ***
+                                                                         
+                                                                         ***    P.S.   ***
                                                                 
 I deliberately did not write copyrights in the template, because you are erasing them )))
 

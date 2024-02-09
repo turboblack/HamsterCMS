@@ -1,14 +1,6 @@
-HamsterCMS is the world's smallest and very simple flatfile content management system.
+h2[HamsterCMS is the world's smallest and very simple flatfile content management system.](http://old.net.eu.org/)
 
-appearance of the main page of the site
-![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
 
-appearance of the admin panel
-![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/adminpanel.png)
-
-https://old.net.eu.org/win95/admin.php - admin panel (login password)
-
-This assembly works on PHP 5,6 to 7,4 versions
 
     No database required!
     You only need one file to work!
@@ -20,9 +12,17 @@ This assembly works on PHP 5,6 to 7,4 versions
     Open source and free!
     Easy to adapt templates. Hamster code takes less than a kilobyte! shock!
     
-    http://old.net.eu.org/ - follow the news, detailed instructions, and download new templates
+    [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)
    
+### appearance of the main page of the site
+![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
 
+### appearance of the admin panel
+![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/adminpanel.png)
+
+admin panel (**login password**)
+
+**This assembly works on PHP 5,6 to 7,4 versions**
 
 What is all this for?
 
@@ -59,12 +59,12 @@ with very old browsers from the 90s
 (will work in IE5 since it has support for UTF8).
 
 For the script to work, you only need free hosting with support 
-for PHP 7.4 (although it will work on 5).
+for PHP 7.4 (although it will work on 5.*).
 copy the files as is to the hosting, open, check - it works.
-so that you have 5 pages (for which it is designed), open index.php 
-and edit index.php?p=index.txt these links, replacing their names 
-with your own, for example index.php?p=about.txt
-after which you go to the admin panel admin.php, enter your 
+so that you have 5 pages (for which it is designed), open 
+and edit .txt files, you can change them, 
+but to do this you will have to edit index.php
+go to the admin panel **admin.php**, enter your 
 login and password (login password), select open the file at the top, edit, save.
 Don’t forget to also change your login and password by 
 editing the admin.php file, the name of which can also be changed, 
@@ -72,8 +72,13 @@ this will not affect performance.
 
 articles that we create in the admin panel and save below in the bottom menu by writing ./article.txt and click save.
 This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
-index.php?p=article.txt
+yourwebpagename/article.txt
 
+The admin panel (**login password** by default) can be renamed, this does not affect the functionality.
+an admin panel is not necessarily needed on hosting; you can use any text editor, or if you don’t plan to edit pages anymore, remove this file from the folder.
+
+                                                                ***   P.S.   ***
+                                                                
 I deliberately did not write copyrights in the template, because you are erasing them )))
 
 in addition, with copyrights the template will not look authentic

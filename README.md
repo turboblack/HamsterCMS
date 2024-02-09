@@ -1,4 +1,4 @@
-[###HamsterCMS is the world's smallest and very simple flatfile content management system.](http://old.net.eu.org/)
+[HamsterCMS is the world's smallest and very simple flatfile content management system.](http://old.net.eu.org/)
 
 
 
@@ -11,9 +11,10 @@
     The hamster code is simple and clear!
     Open source and free!
     Easy to adapt templates. Hamster code takes less than a kilobyte! shock!
-    
-    [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)
+      
    
+ [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)
+
 ### appearance of the main page of the site
 ![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
 

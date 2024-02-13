@@ -4,7 +4,7 @@
 
     No database required!
     You only need one file to work!
-    Works on PHP without preinstalled frameworks
+    Works on PHP 8 without preinstalled frameworks
     Just copy the files to the server (or hosting). No settings needed.
     Perfect for a simple home page.
     The hamster works very quickly.

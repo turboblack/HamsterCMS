@@ -1,80 +1,47 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-    <title>Win95 Cool Page</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF8">
-    <style type="text/css">
-        .ws12 {font-size: 16px;}
-        .wpmd {font-size: 16px;font-family: Arial,Helvetica,Sans-Serif;font-style: normal;font-weight: normal;}
-        DIV,UL,OL
-        {
-         margin-top: 0px;
-         margin-bottom: 0px;
-        }
-         a {
-            text-decoration: none;
-          }
-    </style>
-</head>
-<body bgColor="#000000">
-<div id="image2" style="position:absolute; overflow:hidden; left:50px; top:30px; width:48px; height:48px; z-index:0"><a href="/" title="Index"><img src="images/image002.gif" alt="" title="" border=0 width=48 height=48></a></div>
-
-<div id="text1" style="position:absolute; overflow:hidden; left:25px; top:80px; width:104px; height:26px; z-index:1">
-<a href="/" title="Index"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">My Computer</font></div>
-</div></a></div>
-
-<div id="image1" style="position:absolute; overflow:hidden; left:50px; top:150px; width:48px; height:48px; z-index:2"><a href="/notepad" title="Notepad"><img src="images/image001.gif" alt="" title="" border=0 width=48 height=48></a></div>
-
-<div id="image3" style="position:absolute; overflow:hidden; left:50px; top:270px; width:48px; height:48px; z-index:3"><a href="/internet" title="Internet"><img src="images/image004.gif" alt="" title="" border=0 width=48 height=48></a></div>
-
-<div id="image4" style="position:absolute; overflow:hidden; left:964px; top:520px; width:48px; height:48px; z-index:4"><a href="mailto:yourmail@mail.com" title="e-mail"><img src="images/image007.gif" alt="" title="" border=0 width=48 height=48></a></div>
-
-<div id="image5" style="position:absolute; overflow:hidden; left:50px; top:390px; width:48px; height:48px; z-index:5"><a href="/myfiles" title="Myfiles"><img src="images/image008.gif" alt="" title="" border=0 width=48 height=48></a></div>
-
-<div id="image7" style="position:absolute; overflow:hidden; left:150px; top:55px; width:770px; height:540px; z-index:6"><img src="images/Untitled-2.gif" alt="" title="" border=0 width=770 height=540></div>
-
-<div id="text2" style="position:absolute; overflow:hidden; left:25px; top:200px; width:98px; height:23px; z-index:7">
-<a href="/notepad" title="notepad"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">Notepad</font></div>
-</div></a></div>
-
-<div id="text3" style="position:relative;  overflow:auto;  scrollbar-color: #c0c0c0 transparent; left:160px; top:95px; width:745px; height:465px; z-index:8">
-<div class="ws12">
-    <?php
-    $path = isset($_GET['p']) ? trim($_GET['p'], '/') . '.txt' : 'index.txt';
-    $path = str_replace(['/', '\\'], '', $path);
-    if(file_exists($path)){
-        echo(file_get_contents($path));
+<?php
+$default_template = 'plain';
+$default_directory = './files/';
+$page = isset($_GET['p']) ? trim($_GET['p'], '/') . '.txt' : 'index.txt';
+$page = $default_directory . str_replace(['/', '\\'], '', $page);
+if (!file_exists($page)) {
+    echo ("ERROR 404 - Page Not Found");
+    header("Status: 404 Not Found");
+    exit;
+}
+$template_name = file_exists($page . '_') ? "./templates/" . trim(file_get_contents($page . '_')) . "/index.html" : "./templates/$default_template/index.html";
+if (!file_exists($template_name)) {
+    echo "Template not found ($template_name)";
+    header("Status: 404 Not Found");
+    exit;
+}
+$template = file_get_contents($template_name);
+$contents = file_get_contents($page);
+$navigation = '';
+$nav = glob('files/*.txt'); /* Change the path to the folder with the files */
+usort($nav, function ($a, $b) { /* sort by last edited, but 'index.txt' to top */
+    if (basename($a) == 'index.txt') {
+        return -1;
+    } elseif (basename($b) == 'index.txt') {
+        return 1;
     } else {
-        echo("ERROR 404 - Page Not Found");
-        header("Status: 404 Not Found");
+        return filemtime($b) - filemtime($a);
     }
-    ?>
-</div></div>
-
-<div id="text4" style="position:absolute; overflow:hidden; left:25px; top:320px; width:98px; height:23px; z-index:9">
-<a href="/internet" title="Index"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">Internet</font></div>
-</div></a></div>
-
-<div id="text5" style="position:absolute; overflow:hidden; left:25px; top:440px; width:98px; height:23px; z-index:10">
-<a href="/myfiles" title="Index"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">My Files</font></div>
-</div></a></div>
-
-<div id="text6" style="position:absolute; overflow:hidden; left:939px; top:570px; width:98px; height:23px; z-index:11">
-<a href="mailto:yourmail@mail.com" title="e-mail"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">E-mail</font></div>
-</div></a></div>
-
-<div id="image6" style="position:absolute; overflow:hidden; left:50px; top:510px; width:48px; height:40px; z-index:12"><a href="/msdos" title="MsDos"><img src="images/bash.png" alt="" title="" border=0 width=48 height=40></a></div>
-
-<div id="text7" style="position:absolute; overflow:hidden; left:25px; top:560px; width:98px; height:23px; z-index:13">
-<a href="/msdos" title="Index"><div class="wpmd">
-<div align=center><font color="#FFFFFF" face="MS Sans Serif">MS-DOS</font></div>
-</div></a></div>
-
-
-</body>
-</html>
+});
+foreach ($nav as $file) {
+    $link = preg_replace('/^files\/(.*)\.txt$/i', '$1', $file);
+    $navigation .= "<a href=\"/" . ($link == "index" ? "" : urlencode($link)) . "\">$link</a><br>\n"; /* Use links like /news */
+}
+$template = str_replace('[[CONTENTS]]', $contents, $template);
+$template = str_replace('[[NAVIGATION]]', $navigation, $template);
+preg_match('/\[\[([^\]]+\.txt)\]\]/', $template, $matches);
+if ($matches && $matches[1]) {
+    foreach ($matches as $match) {
+        if (str_starts_with($match, '[[')) continue;
+        $filename = $default_directory . $match;
+        if (file_exists($filename)) {
+            $file_contents = file_get_contents($filename);
+            $template = str_replace('[[' . $match . ']]', $file_contents, $template);
+        }
+    }
+}
+echo $template;

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>My Website</title>
+    <style type="text/css">
+        * { font-family:Century Gothic,Verdana,Arial,Sans Serif; }
+        body { margin:0px;background-color:#bbc; }
+        table.dozqar { padding:0px;border:0px;margin:0px; }
+        td.dozqar,td.leftbg,td.section,td.panel,td.strut { margin:0px;padding:0px;text-align:right;background-color: #977;}
+        td.leftbg,td.rightbg { background-color:#977; }
+        td.leftbg { border-right:4px solid black; }
+        td.rightbg { border-left:4px solid black; }
+        td.strut { border-width:0px;background-color:black;width:4px; }
+        td.panel,td.section { border:0px solid black;margin:2px;margin-left:10px;border-left:0px;padding:3px; }
+        td.section,td.panel { background-color:#ffc; }
+        td.posttitle,td.postdate { font-weight:bold; }
+        td.postdate { text-align:right; }
+        td.postdata { border-top:4px solid black; }
+        a { font-weight:bold;text-decoration:none;color:black; }
+        a:hover { color:white; }
+        input { text-align:center;border:1px solid black;background-color:#fff; }
+        
+    </style>
+</head>
+<body>
+<table class="dozqar" width="100%" cellspacing="0">
+    <tr>
+        <td class="dozqar" height="100" width="100%" colspan="2">
+            <table class="dozqar" width="100%" cellspacing="0">
+                <tr>
+                    <td class="panel" width="96" height="120" style="border-top:0px solid black;margin-top:0px;">
+                        <div style="font-size:70px;font-weight:bold;">&nbsp;&nbsp;Hamster&nbsp;&nbsp;</div>
+                    </td>
+                    <td class="doqzar" style="background-color:#977;margin:4px;border-bottom:0px solid black;text-align:left;" width="*">
+                        <div style="color:#ffffff;font-size:70px;font-weight:bold;">&nbsp;&nbsp;CMS</div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="dozqar" width="23%" style="padding:20px;padding-right:20px;" valign="top">
+            <table class="dozqar navigation" width="100%" cellspacing="0">
+[[NAVIGATION]]
+
+            </table>
+        </td>
+        <td width="*" style="padding:20px;padding-right:10%;" valign="top">
+            <table width="100%" style="margin-bottom:10px;">
+                <tr>
+                    <td class="posttitle"><?php echo isset($pageTitle) ? htmlspecialchars($pageTitle) : 'Welcome!'; ?></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="postdata">
+                    <br>
+                    [[CONTENTS]]
+                    </td>
+                </tr>
+            </table><hr>
+            Created &copy; 2023-2024 for HamsterCMS<br> Site works on a <a rel="nofollow" target="_blank" href="http://downgrade.me.eu.org/">rocket fuel</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

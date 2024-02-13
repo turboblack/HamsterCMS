@@ -88,9 +88,8 @@ an admin panel is not necessarily needed on hosting; you can use any text editor
                                                                          
                                                                          ***    P.S.   ***
                                                                 
-I deliberately did not write copyrights in the template, because you are erasing them )))
-
-in addition, with copyrights the template will not look authentic
+**I want to express special gratitude to Wolf Vogel who helped with the latest update 
+and introduced a lot of cool things that helped make the functionality more convenient**
 
 Enjoy your use.
 

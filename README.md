@@ -12,8 +12,8 @@
     Open source and free!
     Easy to adapt templates.
       
-   
- [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)
+  
+
 
 ### appearance of the main page
 ![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)

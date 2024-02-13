@@ -23,7 +23,13 @@
 
 admin panel (**login password**)
 
-**This assembly works on PHP 5,6 to 7,4 versions**
+**The new script works under PHP 8
+NEW THEMES!
+there is a button to log out of the session
+the buttons have become more beautiful and more convenient to use
+multi-templates and working with templates from the admin panel
+You can assign your own template to each page
+adapting templates from the previous version is very simple**
 
 What is all this for?
 

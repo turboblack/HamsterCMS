@@ -25,11 +25,11 @@ admin panel (**login password**)
 
 **The new script works under PHP 8. 
 NEW THEMES AVAILABLE!
-there is a button to log out of the session
-the buttons have become more beautiful and more convenient to use
-multi-templates and working with templates from the admin panel
-You can assign your own template to each page
-adapting templates from the previous version is very simple**
+There is a button to log out of the session.
+The buttons have become more beautiful and more convenient to use
+multi-templates and working with templates from the admin panel.
+You can assign your own template to each page. 
+Adapting templates from the previous version is very simple**
 
 What is all this for?
 

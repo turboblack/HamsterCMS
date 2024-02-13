@@ -10,7 +10,7 @@
     The hamster works very quickly.
     The hamster code is simple and clear!
     Open source and free!
-    Easy to adapt templates. Hamster code takes less than a kilobyte! shock!
+    Easy to adapt templates.
       
    
  [follow the news, detailed instructions, and download new templates](http://old.net.eu.org/)

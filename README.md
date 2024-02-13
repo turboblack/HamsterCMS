@@ -66,8 +66,7 @@ made in HTML4 without frameworks and add-ons that could work
 with very old browsers from the 90s 
 (will work in IE5 since it has support for UTF8).
 
-For the script to work, you only need free hosting with support 
-for PHP 7.4 (although it will work on 5.*).
+For the script to work, you only need free hosting with support for PHP 8.*
 copy the files as is to the hosting, open, check - it works.
 so that you have 5 pages (for which it is designed), open 
 and edit .txt files, you can change them, 

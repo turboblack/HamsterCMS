@@ -1,1 +1,0 @@
-<div align="left">File Explorer is a file browser that helps you access,&nbsp;</div><div align="left">view and manage all the files stored on your computer.&nbsp;</div><div align="left">It's an important part of Windows,&nbsp;</div><div align="left">but it can also be used on almost any other operating system as well.</div>

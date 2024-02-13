@@ -7,7 +7,7 @@
         if(isset($_GET['p'])){
             $_GET['p'] = $_GET['p'];
         } else {
-            $_GET['p'] = 'главная.txt';
+            $_GET['p'] = 'index.txt';
         }
         echo preg_replace('#([^/][а-Я]+)\.txt$#', '$1', $_GET['p']);
         ?>

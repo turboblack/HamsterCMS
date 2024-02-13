@@ -23,8 +23,8 @@
 
 admin panel (**login password**)
 
-**The new script works under PHP 8
-NEW THEMES!
+**The new script works under PHP 8. 
+NEW THEMES AVAILABLE!
 there is a button to log out of the session
 the buttons have become more beautiful and more convenient to use
 multi-templates and working with templates from the admin panel

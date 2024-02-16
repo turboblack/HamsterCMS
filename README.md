@@ -53,11 +53,6 @@ it is easily opened by browsers under DOS, and the content is edited
 through the admin panel. On the hamster website there are many templates 
 for downloading that will work correctly in the **Links browser under DOS**
 
-you can also create an HTML5 template and work with it, it’s not difficult, 
-about 10 mouse movements, and your site is ready (if you have 
-a ready-made template, you replace the HTML code with PHP scripts 
-according to the instructions, link above),
-
 in general, for minimalists this is what you need
 
     Now a little description of this particular template.
@@ -77,14 +72,10 @@ Don’t forget to also change your login and password by
 editing the admin.php file, the name of which can also be changed, 
 this will not affect performance.
 
-articles that we create in the admin panel and save below in the bottom menu by writing ./article.txt and click save.
-This creates a page that is not visible in the navigation bar, but will be visible separately on the page where we place the link
-yourwebpagename/article
-
 The admin panel (**login password** by default) can be renamed, this does not affect the functionality.
 an admin panel is not necessarily needed on hosting; you can use any text editor, or if you don’t plan to edit pages anymore, remove this file from the folder.
 
-The templates inside the archive (there are several of them) make it clear how exactly you can layout for HamsterCMS. the simplest example is the Plain template in which we can see two important lines, namely [[NAVIGATION]] which is responsible for the navigation, and [[CONTENTS]] which is responsible for the content of your page. you can also create a footer.txt and write [[FOOTER]] in the template below, which will pull the contents of your footer from your text file, so another block will appear on the site. You can create a great variety of blocks. if you have a two-column template, you can create several submenus with news or widgets. this way you can easily make up any template downloaded from the Internet, or adapt one drawn by hand.
+The templates inside the archive (there are several of them) make it clear how exactly you can layout for HamsterCMS. the simplest example is the **Plain** template in which we can see two important lines, namely [[NAVIGATION]] which is responsible for the navigation, and [[CONTENTS]] which is responsible for the content of your page. you can also create a footer.txt and write [[FOOTER]] in the template below, which will pull the contents of your footer from your text file, so another block will appear on the site. You can create a great variety of blocks. if you have a two-column template, you can create several submenus with news or widgets. this way you can easily make up any template downloaded from the Internet, or adapt one drawn by hand.
 
                                                                          
                                                                          ***    P.S.   ***

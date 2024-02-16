@@ -63,9 +63,7 @@ with very old browsers from the 90s
 
 For the script to work, you only need free hosting with support for PHP 8.*
 copy the files as is to the hosting, open, check - it works.
-so that you have 5 pages (for which it is designed), open 
-and edit .txt files, you can change them, 
-but to do this you will have to edit index.php
+
 go to the admin panel **admin.php**, enter your 
 login and password (login password), select open the file at the top, edit, save.
 Don’t forget to also change your login and password by 

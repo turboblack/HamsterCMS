@@ -36,15 +36,15 @@ if (str_contains($output, '[[NAVIGATION]]')) {
     $output = str_replace('[[NAVIGATION]]', $navigation, $output);
 }
 /* look for included files and enter their content. Included files can be referenced in pages and templates */
-preg_match('/\[\[([^\]]+\.txt)\]\]/', $output, $matches); /* would match e.g. [[about.txt]] and about.txt (in matchgroup 1) */
-if ($matches && $matches[1]) {
-    foreach ($matches as $match) {
-        if (str_starts_with($match, '[[')) continue;
-        $filename = "./{$default_directory}/{$match}";
+preg_match_all('/\[\[([^\]]+\.txt)\]\]/', $output, $matches); /* would match e.g. [[about.txt]] and about.txt (in matchgroup 1) */
+if (!empty($matches[1])) {
+    foreach ($matches[1] as $match) {
+        $filename = "./includes/{$match}";
         if (file_exists($filename)) {
             $file_contents = file_get_contents($filename);
             $output = str_replace("[[{$match}]]", $file_contents, $output);
         }
     }
 }
+
 echo $output;

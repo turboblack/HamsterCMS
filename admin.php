@@ -84,17 +84,27 @@ if ($loggedin) {
       }
     }
   }
-  /* option-tag-list of files in selected directory */
-  if ($dh = opendir($directory)) {
-    while (($file = readdir($dh)) !== false) {
-      if (str_ends_with($file, '.txt')) {
-        $current_file = "{$directory}{$file}";
-        if (is_file($current_file)) {
-          $file = preg_replace('/(.*)\.txt$/i', '$1', $file);
-          $filelist .= "<option" . ($directory . $file == $filename ? " selected" : "") . ">$directory$file</option>";
+/* option-tag-list of files in selected directory */
+  function get_pages($dir, $selected) {
+    $pages = '';
+    $includes = '';
+    if ($dh = opendir($dir)) {
+      while (($file = readdir($dh)) !== false) {
+        if (str_ends_with($file, '.txt')) {
+          $current_file = "{$dir}{$file}";
+          if (is_file($current_file)) {
+            $file = preg_replace('/(.*)\.txt$/i', '$1', $file);
+            $contents = file_get_contents("{$current_file}");
+            if (preg_match('/<!--.*include.*-->/', $contents, $matches)) {
+              $includes .= "<option" . ($dir . $file == $selected ? " selected" : "") . ">{$dir}{$file}</option>";
+            } else {
+              $pages .= "<option" . ($dir . $file == $selected ? " selected" : "") . ">{$dir}{$file}</option>";
+            }
+          }
         }
       }
     }
+    return "<optgroup label=\"includes\">{$includes}</optgroup><optgroup label=\"pages\">{$pages}</optgroup>";
   }
 }
 /* option-tag-list of available templates, the curre */
@@ -103,8 +113,8 @@ function get_templates($selected) {
   if ($dh = opendir('./templates')) {
     while (false !== ($dir = readdir($dh))) {
       $subdir = './templates/' . $dir;
-      if ($dir != '.' && $dir != '..' && is_dir($subdir) && file_exists("$subdir/index.html")) {
-        $return .= "<option" . ($dir == $selected? " selected" : "") . ">$dir</option>";
+      if ($dir != '.' && $dir != '..' && is_dir($subdir) && file_exists("{$subdir}/index.html")) {
+        $return .= "<option" . ($dir == $selected? " selected" : "") . ">{$dir}</option>";
       }
     }
   }
@@ -157,7 +167,9 @@ function list_subdirectories($path, $current) {
       <div class="form-style-2-heading">HamsterCMS</div>
         <form action="" method="post">
           <div id="debuginfo"><?= $debuginfo ?>&nbsp;</div>
-          <?php if (!$loggedin) { /* not logged in */ ?>
+          <?php
+          if (!$loggedin) { /* not logged in */
+          ?>
             <div id="loginform">
               <p>
                 <label for="username"><span>Login:</span></label>
@@ -170,7 +182,8 @@ function list_subdirectories($path, $current) {
                 <input id="login" type="submit" value="Login"></td>
               </p>
             </div>
-          <?php } else { /* logged in */ ?>
+          <?php
+          } else { /* logged in */ $filelist = get_pages($directory, $filename); ?>
             <?php if (!empty($filelist)) { ?>
               <label for="filename"><span>Page:</span>
                 <select id="filename" name="filename" onchange="return document.getElementById('action_edit').click();"><option value=""></option>
@@ -187,9 +200,9 @@ function list_subdirectories($path, $current) {
             <input type="submit" id="action_changedir" name="action_changedir" value="Change"/>
             <?php        
             /* only have the editor loaded if there is a valid file selected */
-            if (!empty($filename) && file_exists("$filename.txt")) { /* if file selectd */
-              $filecontent = file_get_contents("$filename.txt");
-              $template = (file_exists("$filename.txt_") ? file_get_contents("$filename.txt_") : '');
+            if (!empty($filename) && file_exists("{$filename}.txt")) { /* if file selectd */
+              $filecontent = file_get_contents("{$filename}.txt");
+              $template = (file_exists("{$filename}.txt_") ? file_get_contents("{$filename}.txt_") : '');
             ?>
               <textarea name="content" cols="150" rows="40"><?= htmlspecialchars($filecontent) ?></textarea>
               <p>

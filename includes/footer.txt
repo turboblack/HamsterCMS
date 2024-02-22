@@ -1,0 +1,3 @@
+<hr>
+            Created &copy; 2023-2024 for HamsterCMS<br> Site works on a <a rel="nofollow" target="_blank" href="http://downgrade.me.eu.org/">rocket fuel</a>
+			<br>

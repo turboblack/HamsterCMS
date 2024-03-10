@@ -1,4 +1,4 @@
-[HamsterCMS is the world's smallest and very simple flatfile content management system.](http://old.net.eu.org/)
+[HamsterCMS is the world's smallest and very simple multi-template flatfile content management system.](http://old.net.eu.org/)
 
 
 
@@ -10,6 +10,7 @@
     The hamster works very quickly.
     The hamster code is simple and clear!
     Open source and free!
+    Multi-template
     Easy to adapt templates.
       
   

@@ -1,0 +1,16 @@
+* { font-family:Century Gothic,Verdana,Arial,Sans Serif; }
+body { margin:0px;background-color:#bbc; }
+table.dozqar { padding:0px;border:0px;margin:0px; }
+td.dozqar,td.leftbg,td.section,td.panel,td.strut { margin:0px;padding:0px;text-align:right;background-color: #977;}
+td.leftbg,td.rightbg { background-color:#977; }
+td.leftbg { border-right:4px solid black; }
+td.rightbg { border-left:4px solid black; }
+td.strut { border-width:0px;background-color:black;width:4px; }
+td.panel,td.section { border:0px solid black;margin:2px;margin-left:10px;border-left:0px;padding:3px; }
+td.section,td.panel { background-color:#ffc; }
+td.posttitle,td.postdate { font-weight:bold; }
+td.postdate { text-align:right; }
+td.postdata { border-top:4px solid black; }
+a { font-weight:bold;text-decoration:none;color:black; }
+a:hover { color:white; }
+input { text-align:center;border:1px solid black;background-color:#fff; }

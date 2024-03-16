@@ -1,0 +1,24 @@
+.wpmd {font-size: 13px;font-family: Arial,Helvetica,Sans-Serif;font-style: normal;font-weight: normal;}
+
+DIV,UL,OL 
+{
+ margin-top: 0px;
+ margin-bottom: 0px;
+}
+</style>
+
+<style type="text/css">
+div#container
+{
+	position:relative;
+	width: 1246px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:left; 
+}
+body {text-align:center;margin:0}
+
+ a {
+    text-decoration: none;
+  }

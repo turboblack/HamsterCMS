@@ -76,6 +76,23 @@ an admin panel is not necessarily needed on hosting; you can use any text editor
 
 The templates inside the archive (there are several of them) make it clear how exactly you can layout for HamsterCMS. the simplest example is the **Plain** template in which we can see two important lines, namely [[NAVIGATION]] which is responsible for the navigation, and [[CONTENTS]] which is responsible for the content of your page. you can also create a footer.txt and write [[footer.txt]] in the template below, which will pull the contents of your footer from your text file, so another block will appear on the site. You can create a great variety of blocks. if you have a two-column template, you can create several submenus with news or widgets. this way you can easily make up any template downloaded from the Internet, or adapt one drawn by hand.
 
+### Pay attention to the new templates for CMS:
+
+### MS DOS template for HamsterCMS
+![this is what theme looks like](https://github.com/turboblack/HamsterCMS_author-s_DOS_template/blob/main/dos_screenshot.png)
+https://github.com/turboblack/HamsterCMS_author-s_DOS_template
+
+HamsterCMS is not only for old templates, the following examples are proof of this. 
+adapted templates for bootstrap, with which you can deploy a landing page
+
+### HamsterCMS_Echoes_Bootstrap_theme
+![this is what theme looks like](https://github.com/turboblack/HamsterCMS_Echoes_Bootstrap_theme/blob/main/example.png)
+https://github.com/turboblack/HamsterCMS_Echoes_Bootstrap_theme
+
+### HamsterCMS simple landing theme
+![this is what theme looks like](https://github.com/turboblack/HamsterCMS_simple_landing_theme/blob/main/screenshot.png)
+https://github.com/turboblack/HamsterCMS_simple_landing_theme
+
                                                                          
                                                                          ***    P.S.   ***
                                                                 

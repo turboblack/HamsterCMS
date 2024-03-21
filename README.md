@@ -80,6 +80,7 @@ The templates inside the archive (there are several of them) make it clear how e
 
 ### MS DOS template for HamsterCMS
 ![this is what theme looks like](https://github.com/turboblack/HamsterCMS_author-s_DOS_template/blob/main/dos_screenshot.png)
+
 https://github.com/turboblack/HamsterCMS_author-s_DOS_template
 
 HamsterCMS is not only for old templates, the following examples are proof of this. 
@@ -87,10 +88,12 @@ adapted templates for bootstrap, with which you can deploy a landing page
 
 ### HamsterCMS_Echoes_Bootstrap_theme
 ![this is what theme looks like](https://github.com/turboblack/HamsterCMS_Echoes_Bootstrap_theme/blob/main/example.png)
+
 https://github.com/turboblack/HamsterCMS_Echoes_Bootstrap_theme
 
 ### HamsterCMS simple landing theme
 ![this is what theme looks like](https://github.com/turboblack/HamsterCMS_simple_landing_theme/blob/main/screenshot.png)
+
 https://github.com/turboblack/HamsterCMS_simple_landing_theme
 
                                                                          

@@ -100,6 +100,7 @@ https://github.com/turboblack/HamsterCMS_simple_landing_theme
 ![this is what theme looks like](https://github.com/turboblack/quark_theme_for_HamsterCMS/blob/main/quark.png)
 
 https://github.com/turboblack/quark_theme_for_HamsterCMS
+
 Quark theme for HamsterCMS adapted for DOS LINKS browser
 
                                                                          

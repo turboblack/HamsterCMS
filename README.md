@@ -103,7 +103,17 @@ https://github.com/turboblack/quark_theme_for_HamsterCMS
 
 Quark theme for HamsterCMS adapted for DOS LINKS browser
 
-                                                                         
+# HamsterCMS 0832 theme
+
+Walking in my shoes
+
+![this is what theme looks like](https://github.com/turboblack/HamsterCMS_0832_theme/blob/main/0832.png)
+
+https://github.com/turboblack/HamsterCMS_0832_theme
+
+0832 theme for HamsterCMS adapted for old browsers    
+
+
                                                                          ***    P.S.   ***
                                                                 
 **I want to express special gratitude to Wolf Vogel who helped with the latest update 

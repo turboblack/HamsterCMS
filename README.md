@@ -113,6 +113,12 @@ https://github.com/turboblack/HamsterCMS_0832_theme
 
 0832 theme for HamsterCMS adapted for old browsers    
 
+# also other available templates
+https://github.com/turboblack/HamsterCMS_ascii_yellow_theme
+https://github.com/turboblack/HamsterCMS_Eraseme_theme
+https://github.com/turboblack/HamsterCMS_Simple_theme
+https://github.com/turboblack/HamsterCMS_Somewhere_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

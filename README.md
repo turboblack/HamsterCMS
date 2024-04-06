@@ -115,8 +115,11 @@ https://github.com/turboblack/HamsterCMS_0832_theme
 
 # also other available templates
 https://github.com/turboblack/HamsterCMS_ascii_yellow_theme
+
 https://github.com/turboblack/HamsterCMS_Eraseme_theme
+
 https://github.com/turboblack/HamsterCMS_Simple_theme
+
 https://github.com/turboblack/HamsterCMS_Somewhere_theme
 
 

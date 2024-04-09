@@ -124,6 +124,8 @@ https://github.com/turboblack/HamsterCMS_Somewhere_theme
 
 https://github.com/turboblack/HamsterCMS_Morpheus_theme
 
+https://github.com/turboblack/HamsterCMS_nes_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

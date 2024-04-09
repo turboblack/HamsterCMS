@@ -38,38 +38,38 @@ if ($loggedin) {
     $template = ''; /* unset template */
   }
   /* action: save the (new?) page's content */
-  if ($action_save) {
-    $filename = $_POST['newfilename'] ? trim(trim($_POST['newfilename']),'/') : '';
+if ($action_save) {
+    $newfilename = $_POST['newfilename'] ? trim(trim($_POST['newfilename']),'/') : '';
+    $filenameWithPath = './files/' . $newfilename . '.txt'; 
     $filecontent = $_POST['content'] ?? '';
-    if (!file_exists($filename . '.txt')) {
-      $h = fopen($filename . '.txt', "w");
-      fclose($h);
-    }
-    $h = fopen($filename . '.txt', "w");
+
+    $h = fopen($filenameWithPath, "w");
     if (fwrite($h, $filecontent)) {
-      $debuginfo .= "Saving content completed successfully. ";
+        $debuginfo .= "Saving content completed successfully. ";
     } else {
-      $debuginfo .= "<b style=color:#cc0000>An error occurred while writing content data</b> ";
+        $debuginfo .= "<b style=color:#cc0000>An error occurred while writing content data</b> ";
     }
     fclose($h);
+
     if (!empty($template)) {
-      $h = fopen($filename . '.txt_', "w");
-      if (fwrite($h, $template)) {
-        $debuginfo .= "Saving template assertion completed successfully.";
-      } else {
-        $debuginfo .= "<b style=color:#cc0000>An error occurred while writing template assertion</b>";
-      }
-      fclose($h);
-    } else {
-      if (file_exists($filename . '.txt_')) {
-        if (unlink($filename . '.txt_')) {
-          $debuginfo .= "Removing template assertion completed successfully.";
+        $h = fopen('./files/' . $newfilename . '.txt_', "w");
+        if (fwrite($h, $template)) {
+            $debuginfo .= "Saving template assertion completed successfully.";
         } else {
-          $debuginfo .= "<b style=color:#cc0000>An error occurred while removing template assertion</b>";
+            $debuginfo .= "<b style=color:#cc0000>An error occurred while writing template assertion</b>";
         }
-      }
+        fclose($h);
+    } else {
+        if (file_exists('./files/' . $newfilename . '.txt_')) {
+            if (unlink('./files/' . $newfilename . '.txt_')) {
+                $debuginfo .= "Removing template assertion completed successfully.";
+            } else {
+                $debuginfo .= "<b style=color:#cc0000>An error occurred while removing template assertion</b>";
+            }
+        }
     }
-  }
+}
+
   /* action: delete the page */
   if ($action_delete) {
     if (!file_exists($filename . '.txt')) {
@@ -91,7 +91,8 @@ if ($loggedin) {
         $current_file = "{$directory}{$file}";
         if (is_file($current_file)) {
           $file = preg_replace('/(.*)\.txt$/i', '$1', $file);
-          $filelist .= "<option" . ($directory . $file == $filename ? " selected" : "") . ">$directory$file</option>";
+          $filelist .= "<option" . ($directory . $file == $filename ? " selected" : "") . " value=\"$directory$file\">$file</option>";
+
         }
       }
     }
@@ -192,17 +193,18 @@ function list_subdirectories($path, $current) {
               $template = (file_exists("$filename.txt_") ? file_get_contents("$filename.txt_") : '');
             ?>
               <textarea name="content" cols="150" rows="40"><?= htmlspecialchars($filecontent) ?></textarea>
-              <p>
-                <label for="newfilename"><span>Save as:</span>
-                  <input type="text" id="newfilename" name="newfilename" value="<?= $filename ?>">
-                </label>
-                <label for="template"><span>Template:</span>
-                  <select id="template" name="template">
-                    <option value=""></option><?= get_templates($template) ?>
-                  </select>
-                </label>
-                <input type="submit" name="action_save" value="Save" />
-              </p>
+<p>
+  <label for="newfilename"><span>Save as:</span></label>
+  <input type="text" id="newfilename" name="newfilename" value="<?= basename(htmlspecialchars($filename)) ?>">
+  <label for="template"><span>Template:</span></label>
+  <select id="template" name="template">
+    <option value=""></option>
+    <?= get_templates($template) ?>
+  </select>
+  <input type="submit" name="action_save" value="Save" />
+</p>
+
+
               <p><input class="red" type="submit" name="action_delete" value="Delete" onClick="return confirm('Do you really want to delete this page?');" /></p>
               <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
               <script type="text/javascript">

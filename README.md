@@ -126,6 +126,10 @@ https://github.com/turboblack/HamsterCMS_Morpheus_theme
 
 https://github.com/turboblack/HamsterCMS_nes_theme
 
+https://github.com/turboblack/HamsterCMS_Mars_theme
+
+https://github.com/turboblack/HamsterCMS_creative_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

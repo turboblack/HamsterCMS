@@ -125,6 +125,31 @@ function list_subdirectories($path, $current) {
     closedir($dh);
   }
 }
+/* Function to get a sorted list of templates */
+function get_templates_sorted($selected) {
+  $templates = []; 
+  if ($dh = opendir('./templates')) {
+    while (false !== ($dir = readdir($dh))) {
+      $subdir = './templates/' . $dir;
+      if ($dir != '.' && $dir != '..' && is_dir($subdir) && file_exists("$subdir/index.html")) {
+        $templates[] = $dir; 
+      }
+    }
+    closedir($dh);
+  }
+
+  
+  sort($templates);
+
+ 
+  $return = '';
+  foreach ($templates as $template) {
+    $return .= "<option" . ($template == $selected? " selected" : "") . ">$template</option>";
+  }
+
+  return $return;
+}
+
 ?>
 <!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
 <html>
@@ -199,7 +224,7 @@ function list_subdirectories($path, $current) {
   <label for="template"><span>Template:</span></label>
   <select id="template" name="template">
     <option value=""></option>
-    <?= get_templates($template) ?>
+    <?= get_templates_sorted($template) ?>
   </select>
   <input type="submit" name="action_save" value="Save" />
 </p>

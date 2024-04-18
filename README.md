@@ -130,6 +130,8 @@ https://github.com/turboblack/HamsterCMS_Mars_theme
 
 https://github.com/turboblack/HamsterCMS_creative_theme
 
+https://github.com/turboblack/HamsterCMS_Fallout_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

@@ -132,6 +132,8 @@ https://github.com/turboblack/HamsterCMS_creative_theme
 
 https://github.com/turboblack/HamsterCMS_Fallout_theme
 
+https://github.com/turboblack/HamsterCMS_horror_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

@@ -231,14 +231,21 @@ function get_templates_sorted($selected) {
 
 
               <p><input class="red" type="submit" name="action_delete" value="Delete" onClick="return confirm('Do you really want to delete this page?');" /></p>
-              <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-              <script type="text/javascript">
-                bkLib.onDomLoaded(function() {
-                  nicEditors.allTextAreas({
-                    buttonList: ["bold", "italic", "underline", "left", "center", "right", "justify", "ol", "ul", "fontFormat", 'fontSize', 'fontFamily', "indent", "outdent", "image", "link", "unlink", "xhtml", "table", 'upload', 'forecolor', 'bgcolor']
-                  })
-                });
-              </script>
+<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+  bkLib.onDomLoaded(function() {
+    nicEditors.allTextAreas({
+      buttonList: [
+        "bold", "italic", "underline", "left", "center", "right", "justify",
+        "ol", "ul", "fontFormat", 'fontSize', 'fontFamily', "indent", "outdent",
+        "image", "link", "unlink", "xhtml", "table", 'upload', 'forecolor',
+        'bgcolor', 'removeformat', 'hr', 'subscript', 'superscript', 'strikethrough',
+        'blockquote'
+      ]
+    });
+  });
+</script>
+
             <?php } /* end if file selected */ ?>
             <p><input type="submit" name="logout" value="Logout"></p>
           <?php } /* end logged in */ ?>

@@ -231,7 +231,7 @@ function get_templates_sorted($selected) {
 
 
               <p><input class="red" type="submit" name="action_delete" value="Delete" onClick="return confirm('Do you really want to delete this page?');" /></p>
-<script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript" src="/nicEdit.js"></script>
 <script type="text/javascript">
   bkLib.onDomLoaded(function() {
     nicEditors.allTextAreas({

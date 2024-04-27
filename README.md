@@ -25,12 +25,13 @@
 admin panel (**login password**)
 
 **The new script works under PHP 8. 
-NEW THEMES AVAILABLE!
+the visual editor has been redesigned, now there are 5 additional functions, and 17 fonts are available
 There is a button to log out of the session.
 The buttons have become more beautiful and more convenient to use
 multi-templates and working with templates from the admin panel.
 You can assign your own template to each page. 
-Adapting templates from the previous version is very simple**
+adapting templates has now become even easier
+but for convenience, dozens of templates are already available for download**
 
 What is all this for?
 
@@ -143,6 +144,12 @@ https://github.com/turboblack/HamsterCMS-theme-night_city_light-HTML4
                                                                 
 **I want to express special gratitude to Wolf Vogel who helped with the latest update 
 and introduced a lot of cool things that helped make the functionality more convenient**
+
+I invite you to visit the hosting that runs on this CMS
+
+http://w10.host
+
+works with both old and new technologies, and backward compatible
 
 Enjoy your use.
 

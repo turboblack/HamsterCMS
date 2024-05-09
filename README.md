@@ -139,6 +139,8 @@ https://github.com/turboblack/HamsterCMS-theme-pst-HTML4
 
 https://github.com/turboblack/HamsterCMS-theme-night_city_light-HTML4
 
+https://github.com/turboblack/parallax_HamsterCMS_TUF_theme
+
 
                                                                          ***    P.S.   ***
                                                                 

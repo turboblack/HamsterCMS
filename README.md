@@ -143,6 +143,8 @@ https://github.com/turboblack/parallax_HamsterCMS_TUF_theme
 
 https://github.com/turboblack/texto_white_HamsterCMS_HTML4_theme
 
+http://github.com/turboblack/DOS3_template_for_HamsterCMS
+
 
                                                                          ***    P.S.   ***
                                                                 

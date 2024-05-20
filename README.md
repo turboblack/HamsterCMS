@@ -145,6 +145,8 @@ https://github.com/turboblack/texto_white_HamsterCMS_HTML4_theme
 
 http://github.com/turboblack/DOS3_template_for_HamsterCMS
 
+https://github.com/turboblack/DOS2_template_for_HamsterCMS
+
 
                                                                          ***    P.S.   ***
                                                                 

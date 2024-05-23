@@ -147,6 +147,8 @@ http://github.com/turboblack/DOS3_template_for_HamsterCMS
 
 https://github.com/turboblack/DOS2_template_for_HamsterCMS
 
+http://github.com/turboblack/DOS8_template_for_HamsterCMS
+
 
                                                                          ***    P.S.   ***
                                                                 

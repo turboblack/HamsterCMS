@@ -37,17 +37,19 @@ if ($loggedin) {
     $filename = ''; /* unset filename, we are somewhere else now */
     $template = ''; /* unset template */
   }
-  /* action: save the (new?) page's content */
+/* action: save the (new?) page's content */
 if ($action_save) {
-    $newfilename = $_POST['newfilename'] ? trim(trim($_POST['newfilename']),'/') : '';
-    $filenameWithPath = './files/' . $newfilename . '.txt'; 
+    $newfilename = $_POST['newfilename'] ? trim(trim($_POST['newfilename']), '/') : '';
+    $filenameWithPath = './files/' . $newfilename . '.txt';
     $filecontent = $_POST['content'] ?? '';
 
     $h = fopen($filenameWithPath, "w");
     if (fwrite($h, $filecontent)) {
         $debuginfo .= "Saving content completed successfully. ";
+        $savedLink = "<a href='$newfilename' target='_blank' style='color: black;'>Open saved file</a>";
+        $debuginfo .= "File saved successfully. $savedLink";
     } else {
-        $debuginfo .= "<b style=color:#cc0000>An error occurred while writing content data</b> ";
+        $debuginfo .= "<b style='color:#cc0000'>An error occurred while writing content data</b> ";
     }
     fclose($h);
 
@@ -56,7 +58,7 @@ if ($action_save) {
         if (fwrite($h, $template)) {
             $debuginfo .= "Saving template assertion completed successfully.";
         } else {
-            $debuginfo .= "<b style=color:#cc0000>An error occurred while writing template assertion</b>";
+            $debuginfo .= "<b style='color:#cc0000'>An error occurred while writing template assertion</b>";
         }
         fclose($h);
     } else {
@@ -64,11 +66,12 @@ if ($action_save) {
             if (unlink('./files/' . $newfilename . '.txt_')) {
                 $debuginfo .= "Removing template assertion completed successfully.";
             } else {
-                $debuginfo .= "<b style=color:#cc0000>An error occurred while removing template assertion</b>";
+                $debuginfo .= "<b style='color:#cc0000'>An error occurred while removing template assertion</b>";
             }
         }
     }
 }
+
 
   /* action: delete the page */
   if ($action_delete) {
@@ -173,7 +176,7 @@ function get_templates_sorted($selected) {
         position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
 	    }
       #loginform p { text-align: right; }
-      #debuginfo { color: #fff; }
+      #debuginfo { color: #339900; }
       #debuginfo:hover { color: #888; }
     </style>
   </head>

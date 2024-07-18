@@ -153,6 +153,8 @@ https://github.com/turboblack/Canvas_HamsterCMS_HTML5_theme
 
 https://github.com/turboblack/HamsterCMS_Kitty_HTML4_theme
 
+https://github.com/turboblack/DOS11_template_for_HamsterCMS
+
                                                                          ***    P.S.   ***
                                                                 
 **I want to express special gratitude to Wolf Vogel who helped with the latest update 

@@ -1,6 +1,6 @@
 /* NicEdit - Micro Inline WYSIWYG
- * Copyright 2007-2024 Brian Kirchoff
- * improved and changed by Turboblack
+ * Copyright 2007-2008 Brian Kirchoff
+ *
  * NicEdit is distributed under the terms of the MIT license
  * For more information visit http://nicedit.com/
  * Do not remove this copyright message
@@ -1142,7 +1142,7 @@ var nicEditorSelect = bkClass.extend({
 });
 
 var nicEditorFontSizeSelect = nicEditorSelect.extend({
-	sel : {1 : '1&nbsp;(8pt)', 2 : '2&nbsp;(10pt)', 3 : '3&nbsp;(12pt)', 4 : '4&nbsp;(14pt)', 5 : '5&nbsp;(18pt)', 6 : '6&nbsp;(24pt)'},
+	sel : {1 : '1&nbsp;(8pt)', 2 : '2&nbsp;(10pt)', 3 : '3&nbsp;(12pt)', 4 : '4&nbsp;(14pt)', 5 : '5&nbsp;(18pt)', 6 : '6&nbsp;(24pt)', 7 : '7&nbsp;(28pt)'},
 	init : function() {
 		this.setDisplay('Font&nbsp;Size...');
 		for(itm in this.sel) {

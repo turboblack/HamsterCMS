@@ -155,6 +155,8 @@ https://github.com/turboblack/HamsterCMS_Kitty_HTML4_theme
 
 https://github.com/turboblack/DOS11_template_for_HamsterCMS
 
+https://github.com/turboblack/HamsterCMS-HTML4-theme
+
                                                                          ***    P.S.   ***
                                                                 
 **I want to express special gratitude to Wolf Vogel who helped with the latest update 

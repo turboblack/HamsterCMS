@@ -170,6 +170,6 @@ works with both old and new technologies, and backward compatible
 
 Enjoy your use.
 
-**to support the project PAYPAL: turboblack@ukr.net  
+**to support the project - PAYPAL: turboblack@ukr.net**
 
 thank you for your attention

@@ -159,6 +159,8 @@ https://github.com/turboblack/HamsterCMS-HTML4-theme
 
 https://github.com/turboblack/HamsterCMS-MyPage-HTML4-theme
 
+https://github.com/turboblack/extortionist-template-html4-for-HamsterCMS
+
                                                                          ***    P.S.   ***
                                                                 
 **I want to express special gratitude to Wolf Vogel who helped with the latest update 

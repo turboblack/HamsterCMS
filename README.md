@@ -175,5 +175,6 @@ works with both old and new technologies, and backward compatible
 Enjoy your use.
 
 **to support the project - PAYPAL: turboblack@ukr.net**
+**transfer to card https://send.monobank.ua/6hDcCqG3tc**
 
 thank you for your attention

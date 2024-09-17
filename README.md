@@ -174,7 +174,7 @@ works with both old and new technologies, and backward compatible
 
 Enjoy your use.
 
-**to support the project - PAYPAL: turboblack@ukr.net**
+**to support the project - [PAYPAL](https://www.paypal.com/donate/?hosted_button_id=2PYBDTJ6EM54U)**
 
 **transfer to card https://send.monobank.ua/6hDcCqG3tc**
 

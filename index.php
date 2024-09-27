@@ -1,43 +1,108 @@
 <?php
 $default_template = 'plain';
 $default_directory = 'files';
-$page = isset($_GET['p']) ? "./{$default_directory}/".str_replace(['/', '\\', '.txt'], '', trim($_GET['p'], '/')).'.txt' : null;
+$blog_directory = 'blog';
 
-// If no specific page is requested or if the requested page is not found, get the first page in alphabetical order
-if ($page === null || !file_exists($page)) {
-    $nav = glob("{$default_directory}/*.txt"); /* Change the path to the folder with the files */
-    usort($nav, function ($a, $b) { /* Sort by filename alphabetically */
-        return strcmp(basename($a), basename($b));
-    });
+// Determine if the request is for a blog post
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$path_parts = explode('/', trim($path, '/'));
+$is_blog_post = count($path_parts) == 2 && $path_parts[0] == 'blog' && !empty($path_parts[1]);
 
-    // Set the first page in alphabetical order as the default page
-    $page = reset($nav);
+$page = null;
+$blog_page = null;
+$template_file = null;
+
+if ($is_blog_post) {
+    $blog_post_name = urldecode($path_parts[1]); // Decode the blog post name from the URL
+    $blog_page = "./{$blog_directory}/" . str_replace(['/', '\\'], '', $blog_post_name) . '.txt';
+    if (!file_exists($blog_page)) {
+        // Debug information
+        header("HTTP/1.0 404 Not Found");
+        echo "Blog post not found: " . htmlspecialchars($blog_post_name);
+        exit;
+    }
+    // Use the specific blog post page as the page to load
+    $page = $blog_page;
+} else {
+    $page = isset($_GET['p']) ? "./{$default_directory}/" . str_replace(['/', '\\'], '', trim($_GET['p'], '/')) . '.txt' : null;
+    if ($page === null || !file_exists($page)) {
+        $nav = glob("{$default_directory}/*.txt");
+        usort($nav, function ($a, $b) {
+            return strcmp(basename($a), basename($b));
+        });
+
+        // Set the first page in alphabetical order as the default
+        $page = reset($nav);
+    }
 }
 
-$template_file = "./templates/". (file_exists("{$page}_") ? trim(file_get_contents("{$page}_")) : "{$default_template}") ."/index.html";
+// Determine the template file
+$template_file = null;
+$template_directory = __DIR__ . '/templates'; // Absolute path to templates directory
+if ($is_blog_post) {
+    // For blog posts, use the specified template in blog/{post_name}.txt_
+    $blog_template_file = "./{$blog_directory}/" . basename($page, '.txt') . '.txt_';
+    if (file_exists($blog_template_file)) {
+        $template_name = trim(file_get_contents($blog_template_file));
+        $template_file = "{$template_directory}/{$template_name}/index.html"; // Absolute path to template
+    }
+} else {
+    // For regular pages, use a specific template if available, otherwise use default
+    $page_template_file = "./{$default_directory}/" . basename($page, '.txt') . '.txt_';
+    if (file_exists($page_template_file)) {
+        $template_name = trim(file_get_contents($page_template_file));
+        $template_file = "{$template_directory}/{$template_name}/index.html"; // Absolute path to template
+    } else {
+        $template_file = "{$template_directory}/{$default_template}/index.html"; // Default template
+    }
+}
+
 if (!file_exists($template_file)) {
-    echo "Template not found ({$template_file})";
-    header("Status: 404 Not Found");
+    // Handle case where template file doesn't exist
+    header("HTTP/1.0 500 Internal Server Error");
+    echo "Template file not found or inaccessible.";
     exit;
 }
 
 $output = file_get_contents($template_file);
-/* fill contents in template */
-$output = str_replace('[[CONTENTS]]', file_get_contents($page), $output);
-/* enter dynamic navigation into template. Navigation can be referenced in page or template */
+
+// Replace [[CONTENTS]] with the appropriate content
+if ($is_blog_post) {
+    $output = str_replace('[[CONTENTS]]', file_get_contents($blog_page), $output);
+} else {
+    $output = str_replace('[[CONTENTS]]', file_get_contents($page), $output);
+}
+
+// Insert dynamic navigation into the template
 $navigation = '';
 if (str_contains($output, '[[NAVIGATION]]')) {
-    $nav = glob("{$default_directory}/*.txt"); /* Change the path to the folder with the files */
-    sort($nav); 
+    $nav = glob("{$default_directory}/*.txt");
+    sort($nav);
     foreach ($nav as $file) {
         $link = preg_replace('/^files\/(.*)\.txt$/i', '$1', $file);
-        $navigation .= "<a href=\"/" . ($link == "index" ? "" : urlencode($link)) . "\">{$link}</a><br>\n"; /* Use links like /news */
+        $navigation .= "<a href=\"/" . ($link == "index" ? "" : urlencode($link)) . "\">{$link}</a><br>\n";
     }
     $output = str_replace('[[NAVIGATION]]', $navigation, $output);
 }
 
-/* look for included files and enter their content. Included files can be referenced in pages and templates */
-preg_match_all('/\[\[([^\]]+\.txt)\]\]/', $output, $matches); /* would match e.g. [[about.txt]] and about.txt (in matchgroup 1) */
+// Insert blog post content or a list of all posts
+if (str_contains($output, '[[BLOG_CONTENT]]')) {
+    if ($blog_page !== null && file_exists($blog_page)) {
+        $blog_content = file_get_contents($blog_page);
+        $output = str_replace('[[BLOG_CONTENT]]', $blog_content, $output);
+    } else {
+        $blog_list = '';
+        $blog_posts = glob("{$blog_directory}/*.txt");
+        foreach ($blog_posts as $post) {
+            $post_name = basename($post, '.txt');
+            $blog_list .= "<a href=\"/blog/" . urlencode($post_name) . "\">{$post_name}</a><br>\n";
+        }
+        $output = str_replace('[[BLOG_CONTENT]]', $blog_list, $output);
+    }
+}
+
+// Find included files and insert their content
+preg_match_all('/\[\[([^\]]+\.txt)\]\]/', $output, $matches);
 if (!empty($matches[1])) {
     foreach ($matches[1] as $match) {
         $filename = "./includes/{$match}";
@@ -47,6 +112,10 @@ if (!empty($matches[1])) {
         }
     }
 }
+
+// Replace paths to resources like images with absolute paths
+$output = str_replace('src="templates/', 'src="/templates/', $output);
+$output = str_replace('href="templates/', 'href="/templates/', $output);
 
 echo $output;
 ?>

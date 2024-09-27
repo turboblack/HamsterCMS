@@ -77,6 +77,11 @@ an admin panel is not necessarily needed on hosting; you can use any text editor
 
 The templates inside the archive (there are several of them) make it clear how exactly you can layout for HamsterCMS. the simplest example is the **Plain** template in which we can see two important lines, namely [[NAVIGATION]] which is responsible for the navigation, and [[CONTENTS]] which is responsible for the content of your page. you can also create a footer.txt and write [[footer.txt]] in the template below, which will pull the contents of your footer from your text file, so another block will appear on the site. You can create a great variety of blocks. if you have a two-column template, you can create several submenus with news or widgets. this way you can easily make up any template downloaded from the Internet, or adapt one drawn by hand.
 
+in this update there is an option to expand the blog so that the blog is displayed - on the desired page in any place you need, 
+insert the structure [[BLOG_CONTENT]]
+
+blog pages are saved in the blog folder, and you can also assign each its own template
+
 ### Pay attention to the new templates for CMS:
 
 ### MS DOS template for HamsterCMS

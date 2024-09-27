@@ -1,0 +1,76 @@
+﻿185.31.40.22
+
+<button type="button">
+  <img src="http://old.net.eu.org/hamsterbutton.png" alt="Иконка" width="88" height="31">
+</button> 
+
+<a href="http://old.net.eu.org" target="_blank"><img src="http://old.net.eu.org/hamsterbutton.png" width="88" height="31"></a>
+
+<a href="http://old.net.eu.org">
+    <img src="http://old.net.eu.org/hamsterbutton.png" alt="HamsterCMS" width="88" height="31">
+</a>
+
+
+вище вказані цмс це як використовувати екскаватор щоб дитині в пісочниці викопати ямку.
+цмс має бути простецька для таких цілей.
+https://github.com/turboblack/HamsterCMS - ось що треба.
+
+інструкція: копіюємо на хостинг. все. можна користуватися :-) так так жодних настройок, одразу все працює.
+
+є можливість використовувати одразу кілька шаблонів (це є в дистрибутиві).
+
+адмінка дуже зручна і зрозуміла.
+
+верстка абсолютно любого шаблону займає лічені хвилини. ви просто заміните кілька фрагментів хтмл коду в шаблоні на [[NAVIGATION]] що відповідає за навігацію, та [[CONTENTS]] просто вставляємо там де має відтворюватися інформація на сторінці, і внизу [[FOOTER]] щоб додати інформацію внизу сторінки про контакти, тощо. додатково можна додати віджети в той самий спосіб - ви просто створюєте текстовий файл в папці includes, в котрому розміщуєте код віджету чи потрібний вам текст, і вся робота.
+
+а логін-пароль до адмінки знаходиться на початку admin.php відкрили замінили, записали, і все )
+
+і займає код лічені кілобайти, і не треба мучитися, все просто як борщ )
+
+
+
+
+
+
+все логично.
+
+чистый хтмл это признак здорового мышления разработчика. потому что: фреймворки и другая нечисть выпускается если не каждый день новый то несколько. потому что: код должен быть чистым и прозрачным. потому что: главное на сайте это содержимое, а не шаблон.
+
+сколько уже было перемен в веб разработке, то многоколоночные сайты, то горизонтальные (начало-середина 00х), флеш и другая нечисть (когда он был еще макромедиа - можно было мериться, работал на первопнях и не глючила страница при 16мб озу), потом все перешли на фреймворки, а это жуть та еще, обновлять костыль каждый год-два. понаделали нескучных (как оказалось скучнейших) лендингов в последние 10 лет, как оказалось - дизайн везде типичен - скроллеры изображений которые переворачивают картинку (про пользователя никто не подумал, на каждое изображение нужно разное колличество времени переварить информацию), иконки размером с кулак, и типичная для всех информация "мы молодая но опытная команда". я даже скажу пару плохих слов про адаптивность и бутстрап (будь он неладен).
+
+если вы делаете страницу которая предназначена для десктопа - не мучайте людей с телефонами, они вполне могут свайпнуть двумя пальцами где надо расширить где надо сузить. если же сайт расчитан на пользователей телефонов - вопросов нет, врятли кто-то со стационарника обидется если у него на экране будет портянка с информацией, ведь главное это информация.
+
+всем не угодишь. поисковики вас запомнят не потому что у вас верстка адаптивная под каждую цацку, а потому что у вас ценная инфа на сайте.
+
+
+<turboblack> hello guys )
+<sompi> hello
+<turboblack> aw, someone alive ))) pretty good
+<turboblack> I have a question for you: will the Links browser work on your OS?
+<turboblack> I need this because I work with this site http://old.net.eu.org/ 
+<sompi> I don't know
+<turboblack> I'm trying to make a layout that will be displayed the same in both DOS and Windows
+<sompi> AFAIK there was a DOS port of Links somewhere, but I haven't tried it. Sadly many DOS programs use undefined features of MS-DOS and don't work on all DOS implementations
+<sompi> At least Arachne doesn't work
+<turboblack> LINKS works on 6.22
+<turboblack> dunno how it helps
+<sompi> What TCP/IP stack it uses?
+<sompi> My TCP/IP stack has a minimalistic socket.h implementation, but I haven't tested it much. I only made simple client and server programs for TCP and UDP and tested that they work identically on both DOS and Windows
+<sompi> I meant to write "on both DOS and Linux"
+<turboblack> http://brutmanlabs.org/ u mean that? i use this stuff
+<sompi> I wrote my own TCP/IP stack, it is a TSR program and is driven by software interrupts
+<sompi> This: http://sininenankka.dy.fi/~sami/fdshell/network.php
+<turboblack> wow! this is awesome, i need to try )
+<sompi> It is a lot more lightweight than mTCP. I started writing it because mTCP cannot work as a TSR, and there wasn't a free DOS TCP/IP stack that would 
+<turboblack> it consumes 15 times less RAM
+<sompi> TCP/IP as a TSR is better because then all programs in memory can use it
+<sompi> Turboblack: Actually about two times less. The mTCP libraries are about 100 kB if I remember correctly
+<turboblack> and its normally starts on DOS?
+<sompi> Yes, it loads itself, configures the IP address via DHCP and then goes resident in memory
+<sompi> You can easily try it in a virtual machine. A packet driver for the VirtualBox network adapter can be found from the internet
+<sompi> Here's instructions: http://sininenankka.dy.fi/~sami/fdshell/start.php
+<sompi> After following those you should be able to join to this channel by writing "irc sininenankka.dy.fi 6667" to the command line of the graphical system (not the DOS command.com)
+<sompi> Here's a step-to-step video: https://www.youtube.com/watch?v=J0p9VMP0pjA
+<sompi> That's on a native hardware, but should also work on a virtual machine
+<sompi> I'll make a better version of that video and make it public, but now in the following days I have some metalwork to do
+User Turbo_black joined the channel.</sompi></sompi></sompi></sompi></sompi></sompi></sompi></turboblack></sompi></sompi></turboblack></sompi></turboblack></sompi></sompi></turboblack></sompi></sompi></sompi></turboblack></turboblack></sompi></sompi></turboblack></sompi></turboblack></turboblack></turboblack></sompi></turboblack>

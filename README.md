@@ -7,6 +7,7 @@
     Works on PHP 8 without preinstalled frameworks
     Just copy the files to the server (or hosting). No settings needed.
     Perfect for a simple home page.
+    Multi-page or blog function
     The hamster works very quickly.
     The hamster code is simple and clear!
     Open source and free!

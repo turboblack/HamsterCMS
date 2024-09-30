@@ -55,6 +55,7 @@ if Internet Explorer 5 is installed), and specifically on this engine
 it is easily opened by browsers under DOS, and the content is edited 
 through the admin panel. On the hamster website there are many templates 
 for downloading that will work correctly in the **Links browser under DOS**
+
 some tests: https://www.bttr-software.de/forum/board_entry.php?id=22015
 
 in general, for minimalists this is what you need

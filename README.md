@@ -171,10 +171,16 @@ https://github.com/turboblack/extortionist-template-html4-for-HamsterCMS
 
                                                                          ***    P.S.   ***
                                                                 
-**I want to express special gratitude to Wolf Vogel who helped with the latest update 
-and introduced a lot of cool things that helped make the functionality more convenient**
+**if you have any ideas, or criticism, or want to help with the implementation - I will be very grateful.**
 
-I invite you to visit the hosting that runs on this CMS
+***I also suggest you familiarize yourself with my creative projects***
+
+http://elpis.ws - zine about small web
+
+https://drunkbook.oldcities.org - drunk book, indecent stories from the life of a fake person
+
+
+**I invite you to visit the hosting that runs on this CMS**
 
 http://w10.host
 

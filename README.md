@@ -186,6 +186,10 @@ http://w10.host
 
 works with both old and new technologies, and backward compatible
 
+***among other things
+the hosting has additionally adapted 99 templates
+they can also be downloaded and used***
+
 Enjoy your use.
 
 **to support the project - [PAYPAL](https://www.paypal.com/donate/?hosted_button_id=2PYBDTJ6EM54U)**

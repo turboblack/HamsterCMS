@@ -18,10 +18,10 @@
 
 
 ### appearance of the main page
-![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/image.png)
+![this is what cms looks like](https://old.net.eu.org/image.png)
 
 ### appearance of the admin panel
-![this is what cms looks like](https://github.com/turboblack/HamsterCMS/blob/master/adminpanel.png)
+![this is what cms looks like](https://old.net.eu.org/adminpanel.png)
 
 admin panel (**login password**)
 

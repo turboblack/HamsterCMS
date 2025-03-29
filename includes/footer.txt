@@ -1,3 +1,3 @@
 <hr>
-            Created &copy; 2023-2025 for HamsterCMS<br> Site works on a <a rel="nofollow" target="_blank" href="http://old.net.eu.org/">rocket fuel</a>
+            &copy; 2023-2025 HamsterCMS<br> site works on a <a rel="nofollow" target="_blank" href="http://old.net.eu.org/">rocket fuel</a>
 			<br>

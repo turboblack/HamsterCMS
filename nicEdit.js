@@ -269,8 +269,8 @@ var nicEditorConfig = bkClass.extend({
 		'hr' : {name : __('Horizontal Rule'), command : 'insertHorizontalRule', noActive : true}
 	},
 	iconsPath : '../nicEditorIcons.gif',
-	buttonList : ['save','bold','italic','underline','left','center','right','justify','ol','ul','fontSize','fontFamily','fontFormat','indent','outdent','image','upload','link','unlink','forecolor','bgcolor'],
-	iconList : {"xhtml":1,"bgcolor":2,"forecolor":3,"bold":4,"center":5,"hr":6,"indent":7,"italic":8,"justify":9,"left":10,"ol":11,"outdent":12,"removeformat":13,"right":14,"save":25,"strikethrough":16,"subscript":17,"superscript":18,"ul":19,"underline":20,"image":21,"link":22,"unlink":23,"close":24,"arrow":26,"upload":27}
+	buttonList : ['save','bold','italic','underline','left','center','right','justify','ol','ul','fontSize','fontFamily','fontFormat','indent','outdent','image','upload','link','unlink','forecolor','bgcolor','table','blockquote'],
+	iconList : {"xhtml":1,"bgcolor":2,"forecolor":3,"bold":4,"center":5,"hr":6,"indent":7,"italic":8,"justify":9,"left":10,"ol":11,"outdent":12,"removeformat":13,"right":14,"save":25,"strikethrough":16,"subscript":17,"superscript":18,"ul":19,"underline":20,"image":21,"link":22,"unlink":23,"close":24,"arrow":26,"upload":27,"table": 34,"blockquote":45}
 	
 });
 /* END CONFIG */
@@ -939,7 +939,7 @@ var nicEditorAdvancedButton = nicEditorButton.extend({
 			if(this.pane && this.pane.pane) {
 				this.removePane();
 			} else {
-				this.pane = new nicEditorPane(this.contain,this.ne,{width : (this.width || '270px'), backgroundColor : '#fff'},this);
+				this.pane = new nicEditorPane(this.contain,this.ne,{width : (this.width || '370px'), backgroundColor : '#fff'},this);
 				this.addPane();
 				this.ne.selectedInstance.saveRng();
 			}
@@ -1062,10 +1062,10 @@ var nicEditorSelect = bkClass.extend({
 		this.selOptions = new Array();
 		
 		this.margin = new bkElement('div').setStyle({'float' : 'left', margin : '2px 1px 0 1px'}).appendTo(this.elm);
-		this.contain = new bkElement('div').setStyle({width: '90px', height : '20px', cursor : 'pointer', overflow: 'hidden'}).addClass('selectContain').addEvent('click',this.toggle.closure(this)).appendTo(this.margin);
+		this.contain = new bkElement('div').setStyle({width: '180px', height : '20px', cursor : 'pointer', overflow: 'hidden'}).addClass('selectContain').addEvent('click',this.toggle.closure(this)).appendTo(this.margin);
 		this.items = new bkElement('div').setStyle({overflow : 'hidden', zoom : 1, border: '1px solid #ccc', paddingLeft : '3px', backgroundColor : '#fff'}).appendTo(this.contain);
 		this.control = new bkElement('div').setStyle({overflow : 'hidden', 'float' : 'right', height: '18px', width : '16px'}).addClass('selectControl').setStyle(this.ne.getIcon('arrow',options)).appendTo(this.items);
-		this.txt = new bkElement('div').setStyle({overflow : 'hidden', 'float' : 'left', width : '66px', height : '14px', marginTop : '1px', fontFamily : 'sans-serif', textAlign : 'center', fontSize : '12px'}).addClass('selectTxt').appendTo(this.items);
+		this.txt = new bkElement('div').setStyle({overflow : 'hidden', 'float' : 'left', width : '150px', height : '14px', marginTop : '1px', fontFamily : 'sans-serif', textAlign : 'center', fontSize : '12px'}).addClass('selectTxt').appendTo(this.items);
 		
 		if(!window.opera) {
 			this.contain.onmousedown = this.control.onmousedown = this.txt.onmousedown = bkLib.cancelEvent;
@@ -1102,11 +1102,11 @@ var nicEditorSelect = bkClass.extend({
 	},
 	
 	open : function() {
-		this.pane = new nicEditorPane(this.items,this.ne,{width : '88px', padding: '0px', borderTop : 0, borderLeft : '1px solid #ccc', borderRight : '1px solid #ccc', borderBottom : '0px', backgroundColor : '#fff'});
+		this.pane = new nicEditorPane(this.items,this.ne,{width : '188px', padding: '0px', borderTop : 0, borderLeft : '1px solid #ccc', borderRight : '1px solid #ccc', borderBottom : '0px', backgroundColor : '#fff'});
 		
 		for(var i=0;i<this.selOptions.length;i++) {
 			var opt = this.selOptions[i];
-			var itmContain = new bkElement('div').setStyle({overflow : 'hidden', borderBottom : '1px solid #ccc', width: '88px', textAlign : 'left', overflow : 'hidden', cursor : 'pointer'});
+			var itmContain = new bkElement('div').setStyle({overflow : 'hidden', borderBottom : '1px solid #ccc', width: '188px', textAlign : 'left', overflow : 'hidden', cursor : 'pointer'});
 			var itm = new bkElement('div').setStyle({padding : '0px 4px'}).setContent(opt[1]).appendTo(itmContain).noSelect();
 			itm.addEvent('click',this.update.closure(this,opt[0])).addEvent('mouseover',this.over.closure(this,itm)).addEvent('mouseout',this.out.closure(this,itm)).setAttributes('id',opt[0]);
 			this.pane.append(itmContain);
@@ -1142,7 +1142,7 @@ var nicEditorSelect = bkClass.extend({
 });
 
 var nicEditorFontSizeSelect = nicEditorSelect.extend({
-	sel : {1 : '1&nbsp;(8pt)', 2 : '2&nbsp;(10pt)', 3 : '3&nbsp;(12pt)', 4 : '4&nbsp;(14pt)', 5 : '5&nbsp;(18pt)', 6 : '6&nbsp;(24pt)'},
+	sel : {1 : '1&nbsp;(8pt)', 2 : '2&nbsp;(10pt)', 3 : '3&nbsp;(12pt)', 4 : '4&nbsp;(14pt)', 5 : '5&nbsp;(18pt)', 6 : '6&nbsp;(24pt)', 7 : '7&nbsp;(32pt)'},
 	init : function() {
 		this.setDisplay('Font&nbsp;Size...');
 		for(itm in this.sel) {
@@ -1243,6 +1243,8 @@ nicEditors.registerPlugin(nicPlugin,nicLinkOptions);
 
 
 
+
+
 /* START CONFIG */
 var nicColorOptions = {
 	buttons : {
@@ -1303,48 +1305,59 @@ nicEditors.registerPlugin(nicPlugin,nicColorOptions);
 
 /* START CONFIG */
 var nicImageOptions = {
-	buttons : {
-		'image' : {name : 'Add Image', type : 'nicImageButton', tags : ['IMG']}
+	buttons: {
+		'image': {name: 'Add Image', type: 'nicImageButton', tags: ['IMG']}
 	}
-	
 };
 /* END CONFIG */
 
-var nicImageButton = nicEditorAdvancedButton.extend({	
-	addPane : function() {
+var nicImageButton = nicEditorAdvancedButton.extend({
+	addPane: function() {
 		this.im = this.ne.selectedInstance.selElm().parentTag('IMG');
 		this.addForm({
-			'' : {type : 'title', txt : 'Add/Edit Image'},
-			'src' : {type : 'text', txt : 'URL', 'value' : 'http://', style : {width: '150px'}},
-			'alt' : {type : 'text', txt : 'Alt Text', style : {width: '100px'}},
-			'align' : {type : 'select', txt : 'Align', options : {none : 'Default','left' : 'Left', 'right' : 'Right'}}
-		},this.im);
+			'': {type: 'title', txt: 'Add/Edit Image'},
+			'src': {type: 'text', txt: 'URL', 'value': 'http://', style: {width: '150px'}},
+			'alt': {type: 'text', txt: 'Alt Text', style: {width: '100px'}},
+			'align': {type: 'select', txt: 'Alignment', options: {none: 'Default', 'left': 'Left', 'right': 'Right'}},
+			'width': {type: 'text', txt: 'Width', style: {width: '40px'}},
+			'height': {type: 'text', txt: 'Height', style: {width: '40px'}},
+			'vspace': {type: 'text', txt: 'Vertical Spacing', style: {width: '40px'}},
+			'hspace': {type: 'text', txt: 'Horizontal Spacing', style: {width: '40px'}},
+			'class': {type: 'text', txt: 'Class', style: {width: '150px'}},
+			'style': {type: 'text', txt: 'CSS Style', style: {width: '150px'}}
+		}, this.im);
 	},
-	
-	submit : function(e) {
+	submit: function(e) {
 		var src = this.inputs['src'].value;
-		if(src == "" || src == "http://") {
-			alert("You must enter a Image URL to insert");
+		if (src == "" || src == "http://") {
+			alert("You must specify a URL to insert an image.");
 			return false;
 		}
 		this.removePane();
 
-		if(!this.im) {
+		if (!this.im) {
 			var tmp = 'javascript:nicImTemp();';
-			this.ne.nicCommand("insertImage",tmp);
-			this.im = this.findElm('IMG','src',tmp);
+			this.ne.nicCommand("insertImage", tmp);
+			this.im = this.findElm('IMG', 'src', tmp);
 		}
-		if(this.im) {
+		if (this.im) {
 			this.im.setAttributes({
-				src : this.inputs['src'].value,
-				alt : this.inputs['alt'].value,
-				align : this.inputs['align'].value
+				src: this.inputs['src'].value,
+				alt: this.inputs['alt'].value,
+				align: this.inputs['align'].value,
+				width: parseInt(this.inputs['width'].value),
+				height: parseInt(this.inputs['height'].value),
+				vspace: parseInt(this.inputs['vspace'].value),
+				hspace: parseInt(this.inputs['hspace'].value),
+				'class': this.inputs['class'].value,
+				style: this.inputs['style'].value
 			});
 		}
 	}
 });
 
-nicEditors.registerPlugin(nicPlugin,nicImageOptions);
+nicEditors.registerPlugin(nicPlugin, nicImageOptions);
+
 
 
 
@@ -1751,3 +1764,221 @@ var nicCodeButton = nicEditorAdvancedButton.extend({
 nicEditors.registerPlugin(nicPlugin,nicCodeOptions);
 
 
+/* START CONFIG */
+var nicBlockquoteOptions = {
+    buttons: {
+        'blockquote': { name: 'Blockquote', type: 'nicBlockquoteButton', tags: ['BLOCKQUOTE'] }
+    }
+};
+/* END CONFIG */
+
+var nicBlockquoteButton = nicEditorAdvancedButton.extend({
+    addPane: function () {
+        this.blk = this.ne.selectedInstance.selElm().parentTag('BLOCKQUOTE');
+        this.addForm({
+            '': { type: 'title', txt: 'Add/Edit Blockquote' },
+            'cite': { type: 'text', txt: 'Cite (optional)', value: this.blk ? this.blk.getAttribute('cite') : '', style: { width: '200px' } }
+        }, this.blk);
+    },
+    submit: function (e) {
+        var citeValue = this.inputs['cite'].value.trim(); 
+        this.removePane();
+
+        if (!this.blk) {
+            this.ne.nicCommand("formatBlock", "blockquote");
+            this.blk = this.findElm('BLOCKQUOTE');
+        }
+        if (this.blk) {
+            
+            if (citeValue) {
+                this.blk.setAttribute("cite", citeValue);
+            } else {
+                this.blk.removeAttribute("cite");
+            }
+           
+            this.blk.style.border = "1px dashed black";
+            this.blk.style.padding = "10px"; 
+            this.blk.style.margin = "10px 0"; 
+            this.blk.style.backgroundColor = "transparent"; 
+        }
+    }
+});
+
+nicEditors.registerPlugin(nicPlugin, nicBlockquoteOptions);
+
+
+/* Table Buttons */
+var nicTableOptions = {
+	buttons: {
+		"table": {name: __('Insert/Modify table'), tags: ['TABLE', 'TR', 'TD', 'TH'], type: "nicTableButton"}
+	}
+};
+
+var nicTableButton = nicEditorAdvancedButton.extend({
+	addPane: function() {
+		this.table = this.getTblElm('TABLE');
+		this.addForm({
+			'': {type: 'title', txt: (!this.table ? 'Add' : 'Edit') + ' table'},
+			'cols': {type: (!this.table ? 'text' : 'hidden'), txt: 'Columns', style: {width: '40px'}},
+			'rows': {type: (!this.table ? 'text' : 'hidden'), txt: 'Rows', style: {width: '40px'}},
+			'cellPadding': {type: 'text', txt: 'Cell Padding', style: {width: '40px'}},
+			'cellSpacing': {type: 'text', txt: 'Cell Spacing', style: {width: '40px'}},
+			'align': {type: 'select', txt: 'Align', options: {none: 'Default', 'center': 'Center', 'left': 'Left', 'right': 'Right'}},
+			'border': {type: 'text', txt: 'Border', style: {width: '40px'}},
+			'width': {type: 'text', txt: 'Width', style: {width: '50px'}},
+			'class': {type: 'text', txt: 'Class', style: {width: '150px'}},
+			'style': {type: 'text', txt: 'CSS Style', style: {width: '150px'}}
+		}, this.table);
+	},
+	submit: function(e) {
+		this.removePane(true);
+		var attrs = {
+			'cellPadding': this.inputs['cellPadding'].value == "" ? "" : this.parseInt(this.inputs['cellPadding'].value),
+			'cellSpacing': this.inputs['cellSpacing'].value == "" ? "" : this.parseInt(this.inputs['cellSpacing'].value),
+			'align': this.inputs['align'].value,
+			'border': this.inputs['border'].value == "" ? "" : this.parseInt(this.inputs['border'].value),
+			'width': this.inputs['width'].value == "" ? "" : this.parseInt(this.inputs['width'].value, true),
+			'class': this.inputs['class'].value,
+			'style': this.inputs['style'].value
+		}
+		if (!this.table) {
+			var cols = this.parseInt(this.inputs['cols'].value);
+			var rows = this.parseInt(this.inputs['rows'].value);
+			if (cols == 0 || rows == 0) {
+				alert("You must specify the number of columns and rows to insert a table");
+				return false;
+			}
+			var T = new bkElement("TABLE");
+			var B = new bkElement("TBODY").appendTo(T);
+			for (var i = 0; i < rows; i++) {
+				var R = new bkElement("TR");
+				for (var j = 0; j < cols; j++) {
+					var C = new bkElement("TD").setContent('&nbsp;').appendTo(R);
+				}
+				R.appendTo(B);
+			}
+			T.setAttributes(attrs);
+			var tmp = 'javascript:nicTableTemp();';
+			this.ne.nicCommand("insertImage", tmp);
+			this.table = this.findElm('IMG', 'src', tmp);
+			this.table.parentNode.replaceChild(T, this.table);
+		}
+		else
+			this.table.setAttributes(attrs);
+	},
+	removePane: function(C) {
+		if (this.pane) {
+			this.pane.remove();
+			this.pane = null;
+			if (C)
+				this.ne.selectedInstance.restoreRng();
+		}
+	},
+	parseInt: function(A, P) {
+		var B = parseInt(A), C = '';
+		if (P && A.substr(A.length - 1, 1) === '%')
+			C = '%';
+		return isNaN(B) ? 0 : B + C;
+	},
+	getElementsByClassName: function(classList, node) {
+		if (!document.getElementsByClassName) {
+			var node = node || document,
+			list = node.getElementsByTagName('*'), 
+			length = list.length,  
+			classArray = classList.split(/\s+/), 
+			classes = classArray.length, 
+			result = [], i, j;
+			for (i = 0; i < length; i++) {
+				for (j = 0; j < classes; j++) {
+					if (list[i].className.search('\\b' + classArray[j] + '\\b') != -1) {
+						result.push(list[i]);
+						break;
+					}
+				}
+			}
+			return result;
+		}
+		else
+			return (node || document).getElementsByClassName(classList);
+	},
+	getTblElm: function(tag) {
+		var E = $BK(this.ne.selectedInstance.selElm().parentTag(tag));
+		var A = this.getElementsByClassName('nicEdit-main', E);
+		return A.length == 0 ? E : false;
+	},
+	makeCellMap: function(table) {
+		var rows = table.rows, cells, cell;
+		var cx, cy, cw, ch, coff;
+		var marr = [], mx, my, mw = 0, mh = 0;
+		for (cy = 0; cy < rows.length; cy++) {
+			cells = rows[cy].cells;
+			for (cx = 0, coff = 0; cx < cells.length; cx++, coff += cw) {
+				cell = cells[cx];
+				cw = cell.colSpan;
+				ch = cell.rowSpan;
+				if (cw == 0 || ch == 0)
+					return false;
+				while (mh < cy + ch)
+					marr[mh++] = [];
+				while (typeof marr[cy][coff] != 'undefined')
+					coff++;
+				for (my = cy; my < cy + ch; my++) {
+					for (mx = coff; mx < coff + cw; mx++) {
+						if (typeof marr[my][mx] != 'undefined')
+							return false;
+						marr[my][mx] = cell;
+					}
+				}
+				if (coff + cw > mw)
+					mw = coff + cw;
+			}
+		}
+		return { marr: marr, mw: mw, mh: mh };
+	},
+	getCellMap: function(table, invalidateCache) {
+		var cellMap, cacheProp = "_cellMap";
+		if (invalidateCache && typeof table[cacheProp] != 'undefined')
+			table[cacheProp] = undefined;
+		if (typeof table[cacheProp] == 'undefined') {
+			cellMap = this.makeCellMap(table);
+			if (cellMap === false)
+				return false;
+			table[cacheProp] = cellMap;
+		}
+		return table[cacheProp];
+	},
+	nextSibling: function (node) {
+		var next = node.nextSibling;
+		if (next != null)
+			return next.nodeType == 1 ? next : this.nextSibling(next);
+		return false;
+	},
+	previousSibling: function (node) {
+		var previous = node.previousSibling;
+		if (previous != null)
+			return previous.nodeType == 1 ? previous : this.previousSibling(previous);
+		return false;
+	},
+	getRowIndex: function(row) {
+		var rows = row.parentNode.childNodes;
+		var index = 0;
+		for (i = 0; i < rows.length; i++) {
+			if (rows[i].nodeType == 1) {
+				if (rows[i] == row)
+					return index;
+				index++;
+			}
+		}
+	},
+	getColIndex: function(col) {
+		var cellMap = this.getCellMap(col.parentTag('TABLE'), true);
+		var rowIndex = this.getRowIndex(col.parentNode);
+		var marr = cellMap.marr;
+		for (i = 0; i < marr[rowIndex].length; i++) {
+			if (marr[rowIndex][i] == col)
+				return i;
+		}
+	}
+});
+
+nicEditors.registerPlugin(nicPlugin, nicTableOptions);

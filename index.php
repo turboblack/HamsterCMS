@@ -15,23 +15,34 @@ $template_file = null;
 if ($is_blog_post) {
     $blog_post_name = urldecode($path_parts[1]); // Decode the blog post name from the URL
     $blog_page = "./{$blog_directory}/" . str_replace(['/', '\\'], '', $blog_post_name) . '.txt';
+
     if (!file_exists($blog_page)) {
-        // Debug information
+        // Если блог-пост не найден — показать error404
         header("HTTP/1.0 404 Not Found");
-        echo "Blog post not found: " . htmlspecialchars($blog_post_name);
+        readfile("error404.html");
         exit;
     }
+
     // Use the specific blog post page as the page to load
     $page = $blog_page;
 } else {
-    $page = isset($_GET['p']) ? "./{$default_directory}/" . str_replace(['/', '\\'], '', trim($_GET['p'], '/')) . '.txt' : null;
-    if ($page === null || !file_exists($page)) {
+    if (isset($_GET['p'])) {
+        $requested = str_replace(['/', '\\'], '', trim($_GET['p'], '/'));
+        $page = "./{$default_directory}/{$requested}.txt";
+
+        if (!file_exists($page)) {
+            // Если обычная страница не найдена — показать error404
+            header("HTTP/1.0 404 Not Found");
+            readfile("error404.html");
+            exit;
+        }
+    } else {
+        // Ничего не запрошено — показать первую страницу
         $nav = glob("{$default_directory}/*.txt");
         usort($nav, function ($a, $b) {
             return strcmp(basename($a), basename($b));
         });
 
-        // Set the first page in alphabetical order as the default
         $page = reset($nav);
     }
 }
@@ -44,16 +55,16 @@ if ($is_blog_post) {
     $blog_template_file = "./{$blog_directory}/" . basename($page, '.txt') . '.txt_';
     if (file_exists($blog_template_file)) {
         $template_name = trim(file_get_contents($blog_template_file));
-        $template_file = "{$template_directory}/{$template_name}/index.html"; // Absolute path to template
+        $template_file = "{$template_directory}/{$template_name}/index.html";
     }
 } else {
     // For regular pages, use a specific template if available, otherwise use default
     $page_template_file = "./{$default_directory}/" . basename($page, '.txt') . '.txt_';
     if (file_exists($page_template_file)) {
         $template_name = trim(file_get_contents($page_template_file));
-        $template_file = "{$template_directory}/{$template_name}/index.html"; // Absolute path to template
+        $template_file = "{$template_directory}/{$template_name}/index.html";
     } else {
-        $template_file = "{$template_directory}/{$default_template}/index.html"; // Default template
+        $template_file = "{$template_directory}/{$default_template}/index.html";
     }
 }
 

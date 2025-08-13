@@ -105,12 +105,12 @@ https://github.com/turboblack/HamsterCMS_Echoes_Bootstrap_theme
 
 https://github.com/turboblack/HamsterCMS_simple_landing_theme
 
-# quark theme for HamsterCMS 
-![this is what theme looks like](https://github.com/turboblack/quark_theme_for_HamsterCMS/blob/main/quark.png)
+# LITE theme for HamsterCMS 
+![this is what theme looks like](https://elpis.ws/screenshot_lite_template.png)
 
-https://github.com/turboblack/quark_theme_for_HamsterCMS
+https://github.com/turboblack/HamsterCMS-LITE-theme
 
-Quark theme for HamsterCMS adapted for DOS LINKS browser
+LITE theme for HamsterCMS adapted for DOS LINKS browser
 
 # HamsterCMS 0832 theme
 

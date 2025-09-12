@@ -171,6 +171,8 @@ https://github.com/turboblack/extortionist-template-html4-for-HamsterCMS
 
 https://github.com/turboblack/MS-DOS-HamsterCMS-template
 
+https://github.com/turboblack/futuristic
+
                                                                          ***    P.S.   ***
                                                                 
 **if you have any ideas, or criticism, or want to help with the implementation - I will be very grateful.**

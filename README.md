@@ -190,6 +190,9 @@ http://w10.host
 
 works with both old and new technologies, and backward compatible
 
+https://hamster.oldcities.org 
+**Also, please note that there is a special edition of this cms for older browsers such as netscape 3 and IE 5**
+
 ***among other things
 the hosting has additionally adapted 99 templates
 they can also be downloaded and used***

@@ -203,4 +203,15 @@ Enjoy your use.
 
 **transfer to card https://send.monobank.ua/6hDcCqG3tc**
 
-thank you for your attention
+
+Transfer to Bitcoin
+                                                             
+          bc1qwmkngqgxw3kzu35lp2npkjtepghhx6mftkfw6g           
+                                                                   
+Transfer to Ethereum
+                                                        
+          0x5931d8E3F279eb65F71295374a9425a32032F473
+              
+       ------------------------------------------------------------
+        Thank you for your support, shares, and kind words!        
+       ------------------------------------------------------------

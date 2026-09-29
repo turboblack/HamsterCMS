@@ -201,6 +201,8 @@ Enjoy your use.
 
 **to support the project - [PAYPAL](https://www.paypal.com/donate/?hosted_button_id=2PYBDTJ6EM54U)**
 
+PayPal account linked to email turboblack@ukr.net
+
 **transfer to card https://send.monobank.ua/6hDcCqG3tc**
 
 
